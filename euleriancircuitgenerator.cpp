@@ -2,15 +2,6 @@
 #include <iostream>
 using namespace std;
 
-void mostrar(int **m, int orden){
-  for (int i = 0; i < orden; i++) {
-      for (int j = 0; j < orden; j++) {
-          cout << m[i][j] << endl;
-      }
-      cout << endl;
-  }
-}
-
 
 int main(int argc, char const *argv[]) {
   int orden = atoi(argv[1]);
@@ -26,7 +17,9 @@ int main(int argc, char const *argv[]) {
   }
 
 
-  mostrar(m,orden);
+  /*
+    AQUÍ VA EL CODIGO DANI
+  */
 
 
 
