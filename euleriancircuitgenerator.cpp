@@ -7,6 +7,10 @@ using namespace std;
 int main(int argc, char const *argv[]) {
   int order = atoi(argv[1]);
 
+  //Crea el arreglo que guarda la cantidad de vertices impares (de grado impar)
+  int *impar;
+  impar =new int[0];
+
   //Esto crea la matrix
   int **matrix;
   matrix = new int* [order];
@@ -29,5 +33,6 @@ int main(int argc, char const *argv[]) {
       delete[] matrix[i];
   }
   delete [] matrix;// Libera el arreglo principal
+  delete [] impar;
   return 0;
 }
