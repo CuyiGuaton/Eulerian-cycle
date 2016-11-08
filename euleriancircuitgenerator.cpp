@@ -1,5 +1,6 @@
 #include <cstdlib>
 #include <iostream>
+#include "funcions.cpp"
 using namespace std;
 
 
