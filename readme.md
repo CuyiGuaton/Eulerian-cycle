@@ -1,8 +1,8 @@
 # Para crear el grafo aleatorio #
 
-    g++ eulerianCircuitGenerator.cpp && ./a.out numver
+    g++ eulerianCircuitGenerator.cpp && ./a.out numver p
 
-Donde numver es el número de vertices del grafo que se quiere que tenga el grafo
+Donde numver es el número de vertices del grafo que se quiere que tenga el grafo y p es la probabilidad.
 
 
 # hueas a considerar del programa

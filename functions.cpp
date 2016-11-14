@@ -1,3 +1,7 @@
+#include <cstdlib>
+#include <iostream>
+using namespace std;
+
 void mostrar(int **m, int orden);
 void incluir(int a, int b, int **matrix, int order);
 void eliminar(int a, int b, int **matrix, int order);

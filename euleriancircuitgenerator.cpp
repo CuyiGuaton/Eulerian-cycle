@@ -1,37 +1,44 @@
 #include <cstdlib>
 #include <iostream>
-#include "funcions.cpp"
+#include "functions.cpp"
 using namespace std;
 
 
-
 int main(int argc, char const *argv[]) {
-  int order = atoi(argv[1]);
+  int a;
+  int b;
+  int c;
+
+  //Da el orden de la matrix
+  int n = atoi(argv[1]);
+  float p = atof(argv[2]);
 
   //Crea el arreglo que guarda la cantidad de vertices impares (de grado impar)
   int *impar;
-  impar =new int[0];
+  impar =new int[n];
 
   //Esto crea la matrix
   int **matrix;
-  matrix = new int* [order];
-  for(int c = 0; c < order; c++) {
-      matrix[c] = new int[order];
-      for(int r = 0; r <order; r++)
+  matrix = new int* [n];
+  for(int c = 0; c < n; c++) {
+      matrix[c] = new int[n];
+      for(int r = 0; r <n; r++)
         matrix[c][r] = 0;
 
   }
+  cout<<p<<endl;
+  //Genera un grafo aleatorio
+  for(a=0; a < n-1 ; a++){
+    incluir(a,a+1,matrix,n);
+    for(b=a+2 ; b<n ; b++)
+      if( rand()%100 + 1 < p*100 )
+        incluir(a,b,matrix,n);
+  }
 
-
-  /*
-    codigo psudocigosada
-  
-  */
-
-
+  mostrar(matrix,n);
 
   //Libera los arreglos dentro del arreglo principal.
-  for (int i = 0; i < order; i++){
+  for (int i = 0; i < n; i++){
       delete[] matrix[i];
   }
   delete [] matrix;// Libera el arreglo principal
