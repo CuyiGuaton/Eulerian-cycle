@@ -15,7 +15,7 @@ int main(int argc, char const *argv[]) {
 
   //Crea el arreglo que guarda la cantidad de vertices impares (de grado impar)
   int *impar;
-  impar =new int[n];
+  impar =new int[0];
 
   //Esto crea la matrix
   int **matrix;
@@ -27,6 +27,8 @@ int main(int argc, char const *argv[]) {
 
   }
   cout<<p<<endl;
+
+
   //Genera un grafo aleatorio
   for(a=0; a < n-1 ; a++){
     incluir(a,a+1,matrix,n);
@@ -35,7 +37,12 @@ int main(int argc, char const *argv[]) {
         incluir(a,b,matrix,n);
   }
 
-  mostrar(matrix,n);
+  int largo = imparV(impar,matrix,n);
+  cout<<largo<<endl<<" Impar= {";
+  for (size_t i = 0; i < largo; i++) {
+    cout<<impar[i]<<"  ";
+  }
+  cout<<"}"<<endl;
 
   //Libera los arreglos dentro del arreglo principal.
   for (int i = 0; i < n; i++){

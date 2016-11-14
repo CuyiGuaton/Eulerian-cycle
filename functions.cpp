@@ -57,6 +57,7 @@ int imparV(int *impar, int **matrix, int order){
       count++;
     }
   }
+  return  count;
 }
 
 
