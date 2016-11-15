@@ -37,20 +37,16 @@ int main(int argc, char const *argv[]) {
         incluir(a,b,matrix,n);
   }
 
-  mostrar(matrix,n);
-
 
   int largo = imparV(impar,matrix,n);
 
-  /* Muestra impar, borrar después */
+  /* Muestra impar, borrar después
   cout<<"largo = "<<largo<<endl<<"Impar= {";
   for (size_t i = 0; i < largo; i++) {
     cout<<impar[i]<<"  ";
   }
   cout<<"}"<<endl<<endl;
-  /* borrar hasta aquí */
-
-  std::cout << "Length of array = " << sizeof(impar)/sizeof(int) << std::endl;
+   borrar hasta aquí */
 
 while(largo != 0){
   b=impar[largo-1]; //elige el último elemento de impar
