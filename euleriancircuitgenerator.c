@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "functions.cpp"
+#include "functions.c"
 
 
 int main(int argc, char const *argv[]) {
@@ -51,7 +51,7 @@ while(largo != 0){
     else{
       //c = a+2 +(rand()% n-3 + 1) % n; //C = a+2 +rand(1, n-3) mod n
       c= a-2 >= 0  ? a-2 : b+2 ;
-      if (pertenece(a,c,matrix,n) ==1 )
+            if (pertenece(a,c,matrix,n) ==1 )
         eliminar(a,c,matrix,n);
       else
         incluir(a,c,matrix,n);
@@ -63,6 +63,11 @@ while(largo != 0){
   largo=largo-2;
 }
 
+  free( impar );
+  for( int i=0; matrix[i] != NULL; i++ ) {
+      free( matrix[i] );
+  }
+  free( matrix );
 
   return 0;
 }

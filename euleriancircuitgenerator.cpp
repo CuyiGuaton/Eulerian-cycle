@@ -42,7 +42,7 @@ int main(int argc, char const *argv[]) {
 
 
   cout<<"largo = "<<largo<<endl<<"Impar= {";
-  for (size_t i = 0; i < largo; i++) {
+  for (int i = 0; i < largo; i++) {
     cout<<impar[i]<<"  ";
   }
   cout<<"}"<<endl<<endl;
