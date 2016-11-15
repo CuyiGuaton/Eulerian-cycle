@@ -29,6 +29,8 @@ void eliminar(int a, int b, int **matrix, int order){
   matrix[b][a]= 0;
 }
 
+
+//devueve 1 si pertenece, 0 sino.
 int pertenece(int a, int b, int **matrix, int order){
   if(matrix[a][b] == 1)
     return 1;

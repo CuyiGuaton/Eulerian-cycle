@@ -37,12 +37,45 @@ int main(int argc, char const *argv[]) {
         incluir(a,b,matrix,n);
   }
 
+  mostrar(matrix,n);
+
+
   int largo = imparV(impar,matrix,n);
-  cout<<largo<<endl<<" Impar= {";
+
+  /* Muestra impar, borrar después */
+  cout<<"largo = "<<largo<<endl<<"Impar= {";
   for (size_t i = 0; i < largo; i++) {
     cout<<impar[i]<<"  ";
   }
-  cout<<"}"<<endl;
+  cout<<"}"<<endl<<endl;
+  /* borrar hasta aquí */
+
+
+while(largo >= 0){
+  cout<<"largo = "<<largo<<endl;
+  b=impar[largo-1]; //elige el último elemento de impar
+  a=impar[largo-2]; //elige el penúltimo elemento de impar
+  if(pertenece(a,b,matrix,n) != 1)
+    incluir(a,b,matrix,n);
+  else
+    if (b != a+1)
+      eliminar(a,b,matrix,n);
+    else{
+      //c = a+2 +(rand()% n-3 + 1) % n; //C = a+2 +rand(1, n-3) mod n
+      cout<<"c = "<<c<<endl;
+      if (pertenece(a,c,matrix,n) ==1 )
+        eliminar(a,c,matrix,n);
+      else
+        incluir(a,c,matrix,n);
+      if (pertenece(b,c,matrix,n) ==1 )
+        eliminar(b,c,matrix,n);
+      else
+        incluir(b,c,matrix,n);
+    }
+  largo=largo-2;
+}
+
+  mostrar(matrix,n);
 
   //Libera los arreglos dentro del arreglo principal.
   for (int i = 0; i < n; i++){
