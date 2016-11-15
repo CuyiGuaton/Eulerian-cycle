@@ -1,8 +1,8 @@
 # Para crear el grafo aleatorio #
 
-    g++ eulerianCircuitGenerator.cpp && ./a.out numver p
+    gcc eulerianCircuitGenerator.cpp && ./a.out numver p > matrix.txt
 
-Donde numver es el número de vertices del grafo que se quiere que tenga el grafo y p es la probabilidad.
+Donde numver es el número de vertices del grafo que se quiere que tenga el grafo, p es la probabilidad de las aristas y matrix.txt el archivo en el que se guardara la matrix resultante.
 
 
 # hueas a considerar del programa
