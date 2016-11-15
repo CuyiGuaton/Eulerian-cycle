@@ -51,10 +51,13 @@ int main(int argc, char const *argv[]) {
   /* borrar hasta aquí */
 
 
-while(largo >= 0){
-  cout<<"largo = "<<largo<<endl;
+while(largo != 0){
+
   b=impar[largo-1]; //elige el último elemento de impar
   a=impar[largo-2]; //elige el penúltimo elemento de impar
+  cout<<"largo = "<<largo<<endl;
+  cout<<"b = "<<b<<endl;
+  cout<<"a = "<<a<<endl;
   if(pertenece(a,b,matrix,n) != 1)
     incluir(a,b,matrix,n);
   else
@@ -62,6 +65,7 @@ while(largo >= 0){
       eliminar(a,b,matrix,n);
     else{
       //c = a+2 +(rand()% n-3 + 1) % n; //C = a+2 +rand(1, n-3) mod n
+      c=a;
       cout<<"c = "<<c<<endl;
       if (pertenece(a,c,matrix,n) ==1 )
         eliminar(a,c,matrix,n);
