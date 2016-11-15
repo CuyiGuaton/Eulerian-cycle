@@ -52,7 +52,6 @@ int main(int argc, char const *argv[]) {
 
 
 while(largo != 0){
-
   b=impar[largo-1]; //elige el último elemento de impar
   a=impar[largo-2]; //elige el penúltimo elemento de impar
   cout<<"largo = "<<largo<<endl;
