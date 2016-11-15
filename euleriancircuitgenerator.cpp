@@ -50,6 +50,7 @@ int main(int argc, char const *argv[]) {
   cout<<"}"<<endl<<endl;
   /* borrar hasta aquí */
 
+  std::cout << "Length of array = " << sizeof(impar)/sizeof(int) << std::endl;
 
 while(largo != 0){
   b=impar[largo-1]; //elige el último elemento de impar
@@ -64,7 +65,7 @@ while(largo != 0){
       eliminar(a,b,matrix,n);
     else{
       //c = a+2 +(rand()% n-3 + 1) % n; //C = a+2 +rand(1, n-3) mod n
-      c=a;
+      c= a-1 > 0 ? a-2 : b+2 ;
       cout<<"c = "<<c<<endl;
       if (pertenece(a,c,matrix,n) ==1 )
         eliminar(a,c,matrix,n);
