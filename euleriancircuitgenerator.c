@@ -15,17 +15,13 @@ int main(int argc, char const *argv[]) {
 
   //Crea el arreglo que guarda la cantidad de vertices impares (de grado impar)
   int *impar;
-  impar =calloc(2, sizeof(unsigned int));
+  impar =(int *) malloc (n*sizeof(int));
 
   //Esto crea la matrix
   int **matrix;
-  matrix = calloc(n, sizeof(int*));
-  for(int c = 0; c < n; c++) {
-      matrix[c] = calloc(n, sizeof(int));
-      for(int r = 0; r <n; r++)
-        matrix[c][r] = 0;
-
-  }
+  matrix = (int **)malloc (n*sizeof(int *));
+  for (int i=0;i<n;i++)
+    matrix[i] = (int *) malloc (n*sizeof(int));
 
 
   //Genera un grafo aleatorio
@@ -51,10 +47,11 @@ while(largo != 0){
     else{
       //c = a+2 +(rand()% n-3 + 1) % n; //C = a+2 +rand(1, n-3) mod n
       c= a-2 >= 0  ? a-2 : b+2 ;
-            if (pertenece(a,c,matrix,n) ==1 )
+      if (pertenece(a,c,matrix,n) ==1 )
         eliminar(a,c,matrix,n);
       else
         incluir(a,c,matrix,n);
+
       if (pertenece(b,c,matrix,n) ==1 )
         eliminar(b,c,matrix,n);
       else
