@@ -1,8 +1,19 @@
+void mostrar(int **matrix, int order);
 void incluir(int a, int b, int **matrix, int order);
 void eliminar(int a, int b, int **matrix, int order);
 int pertenece(int a, int b, int **matrix, int order);
 int degreeVertex(int a, int **matrix, int order);
 int imparV(int *impar, int **matrix, int order); //Guarda las aristas de grado impar en el arreglo impar y devuelve el largo de este arreglo.
+
+void mostrar(int **matrix, int order){
+  for (int row=0; row<order; row++){
+    for(int columns=0; columns<order; columns++)
+         printf("%d ", matrix[row][columns]);
+    printf("\n");
+  }
+  printf("\n");
+}
+
 
 void incluir(int a, int b, int **matrix, int order){
   matrix[a][b]= 1;

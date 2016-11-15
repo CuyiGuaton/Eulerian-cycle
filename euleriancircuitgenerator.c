@@ -60,6 +60,9 @@ while(largo != 0){
   largo=largo-2;
 }
 
+mostrar(matrix,n);
+
+
   free( impar );
   for( int i=0; matrix[i] != NULL; i++ ) {
       free( matrix[i] );
