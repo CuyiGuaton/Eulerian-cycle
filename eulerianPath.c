@@ -15,7 +15,7 @@ int *path;
 
 //graph[row][col]
 void eulerianPath(int **matrix,int order) {
-  path =(int *) malloc (order*sizeof(int));
+  path =(int *) malloc (1*sizeof(int));
   for (size_t row = 0; row < order; row++)
     for (size_t col = 0; col < order; col++)
       matrix[row][col] = 0;
@@ -35,20 +35,18 @@ void eulerianPath(int **matrix,int order) {
 
 void findEulerianRecursive(int **graph, int n, int row,int col){
   //printf("%d \n", row);
-  mostrar(graph,n);
-  showPath();
   if(col >  n)
-    if(isEmpty==1){
+    if(isEmpty(graph,n)==1){
       mostrar(graph,n);
       showPath();
     }
     else{
-      printf("entre\n" );
-      printf("%d  %d\n", path[indexPath-1], row);
+    //  showPath();
+  //    printf("entre\n" );
+//      printf("%d  %d\n", path[indexPath-1], row);
       graph[path[indexPath-1]][row]=1;
       graph[row][path[indexPath-1]]=1;
-      indexPath--;
-      printf("%d  %d\n", path[indexPath], row+1);
+      //printf("%d  %d\n", path[indexPath], row+1);
       findEulerianRecursive(graph, n, path[indexPath], row+1);
     }
   else
@@ -72,7 +70,7 @@ int isEmpty(int **graph, int order){
 }
 
 void showPath(){
-  for (size_t i = 0; i < indexPath; i++) {
+  for (size_t i = 0; i <indexPath; i++) {
     printf("%d ", path[i] );
   }
   printf("\n" );
