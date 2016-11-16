@@ -38,6 +38,8 @@ void findEulerianRecursive(int **graph, int n, int row,int col){
   if(col >  n)
     if(isEmpty(graph,n)==1){
       mostrar(graph,n);
+      path[indexPath]=row;
+      indexPath++;
       showPath();
     }
     else{
@@ -46,6 +48,7 @@ void findEulerianRecursive(int **graph, int n, int row,int col){
 //      printf("%d  %d\n", path[indexPath-1], row);
       graph[path[indexPath-1]][row]=1;
       graph[row][path[indexPath-1]]=1;
+      indexPath--;
       //printf("%d  %d\n", path[indexPath], row+1);
       findEulerianRecursive(graph, n, path[indexPath], row+1);
     }
@@ -70,7 +73,7 @@ int isEmpty(int **graph, int order){
 }
 
 void showPath(){
-  for (size_t i = 0; i <indexPath; i++) {
+  for (int i = 0; i <indexPath; i++) {
     printf("%d ", path[i] );
   }
   printf("\n" );
