@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include "functions.c"
-
+#include "eulerianPath.c"
 
 int main(int argc, char const *argv[]) {
   int a;
   int b;
   int c;
   srand(time(NULL));
+
   //Da el orden de la matrix
   int n = atoi(argv[1]);
   float p = atof(argv[2]);
@@ -22,7 +23,6 @@ int main(int argc, char const *argv[]) {
   matrix = (int **)malloc (n*sizeof(int *));
   for (int i=0;i<n;i++)
     matrix[i] = (int *) malloc (n*sizeof(int));
-
 
   //Genera un grafo aleatorio
   for(a=0; a < n-1 ; a++){
@@ -51,7 +51,6 @@ while(largo != 0){
         eliminar(a,c,matrix,n);
       else
         incluir(a,c,matrix,n);
-
       if (pertenece(b,c,matrix,n) ==1 )
         eliminar(b,c,matrix,n);
       else
@@ -61,10 +60,11 @@ while(largo != 0){
 }
 
 mostrar(matrix,n);
+eulerianPath(matrix,n);
 
 
   free( impar );
-  for( int i=0; matrix[i] != NULL; i++ ) {
+  for( int i=0; i<n; i++ ) {
       free( matrix[i] );
   }
   free( matrix );
