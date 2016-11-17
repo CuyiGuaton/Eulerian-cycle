@@ -59,7 +59,7 @@ while(largo != 0){
   largo=largo-2;
 }
 
-//mostrar(matrix,n);
+mostrar(matrix,n);
 eulerianPath(matrix,n);
 
 
