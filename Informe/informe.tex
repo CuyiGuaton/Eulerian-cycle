@@ -178,6 +178,10 @@ p=1\hspace{1cm}48239.0000000
 \newpage
 \section{Formulación experimentos}
 
+Se experimentó con los tiempos de ejecución del algoritmo\\ para distintos valores de "n" y "p", pudiendo ver así que tan influyentes son los datos de las respectivas variables, y tener una mejor idea de la eficiencia del programa.
+\\
+Para ello se dió uso de gráficos para poder estudiarlo mejor.
+
 \section{Repretesentación de grafo utilizada}
 
 Se utilizo una matriz de adyacencia para representar el grafo debido a que en C se puede manejar sencillamente como un arreglo de dos dimensiones. De esta forma escribir y recorrer la matriz fue tan sencillo como recorrer una matriz de largo n, donde n es la cantidad de vértices que coincide con la cantidad de filas y columnas de va a tener la matriz.
@@ -185,13 +189,13 @@ Se utilizo una matriz de adyacencia para representar el grafo debido a que en C 
 \section{Algoritmo de busqueda de camino}
 
 La principal razón porque la la búsqueda de ciclo de euler da un ciclo un de euler es debido a que en el grafo generado todas los vértices tienen grado par.
-
+\\\\
 Para crear el algoritmo se utilizo una función recursiva para recorrer el grafo y borrar las aristas entre los vértice y una estrategia de backtracking para volver un paso atrás en el caso de que haya llegado a un vértice sin aristas y aun hayan vértice que no se han recorrido. El algoritmo hace lo siguiente.
-
+\\\\
 Al inicio de la función recursiva se posiciona en la fila y columna 0, a partir de ahí comienza a recorrer la fila hasta encontrar un 1, eso significa que hay una arista entre el vértice que esta representando la fila y el vértice que representa la columna, por lo cambia el 1 por un 0, al ser una matriz simétrica se borra en la posición transpuesta también. Después se va a la intercambia la posición de la fila por la columna y se empieza a recorrer esa fila desde la posición 0. el algoritmo continua así hasta que se recorre toda la matriz solo tenga 0 o hasta que se llegue a una fila llena de unos.
-
+\\\\
 En el caso de que llegue a una fila llena de ceros significa que o que se encontró el camino euleriano o que se borraron todas las aristas de ese vértice y aun faltan aristas por recorrer en los otros vértices.
-
+\\\\
 En el primer caso se termina el algoritmo y se muestra el camino. En el segundo se debe hacer un backtracking, para ello se ve el arreglo en el que se guardaba el camino euleriano y se vuelven a poner 1 donde se habían por 0, luego se va a última fila que se recorrió, pero en vez se partir desde la posición 0, esta vez se parte desde la posición siguiente al 0 que se borro, de esta forma se puede seguir recorriendo el grafo sin problemas hasta que ya se haya recorrido todas las aristas.
 
 
