@@ -182,6 +182,8 @@ Se experimentó con los tiempos de ejecución del algoritmo\\ para distintos val
 \\
 Para ello se dió uso de gráficos para poder estudiarlo mejor.
 
+
+
 \section{Repretesentación de grafo utilizada}
 
 Se utilizo una matriz de adyacencia para representar el grafo debido a que en C se puede manejar sencillamente como un arreglo de dos dimensiones. De esta forma escribir y recorrer la matriz fue tan sencillo como recorrer una matriz de largo n, donde n es la cantidad de vértices que coincide con la cantidad de filas y columnas de va a tener la matriz.
@@ -242,17 +244,44 @@ En el primer caso se termina el algoritmo y se muestra el camino. En el segundo 
 \section{Curvas de desempeño de resultados}
 \subsection{Comportamiento para los valores de "p" pedidos.}
 
+Teniendo un valor de "n" vastante bajo la gráfica sólo mostró un cambio brusco del p=0.1 al p=0.3.
+\\\\
+Tabla :
+\\\\
+\includegraphics[scale=0.55]{3}
+\\\\\\\\
 \includegraphics[scale=0.55]{n}
+\newpage
+
+Con "n" un valor considerablemente mayor la gráfica no mostró resutlados iniciales tan bruscos como en el caso anterior.
+\\\\
+Tabla :
+\\\\
+\includegraphics[scale=0.45]{2}
 
 \includegraphics[scale=0.55]{nn}
+\newpage
+
+Tomando "n" como un número muy grande la grafica se mostró ascendente.
+\\\\
+Tabla :
+\\\\
+\includegraphics[scale=0.45]{1}
 
 \includegraphics[scale=0.55]{nnnn}
+\newpage
 
 \subsection{Costos computacionales de los algoritmos para n = 1000 para distintos valores de "p".}
 
-\includegraphics[scale=0.55]{nnn}
+Para el caso pedido de n = 1000 se obtuvo una grafica ascendente hasta que p = 0.625.
+\\\\
+Tabla :
+\\\\
+\includegraphics[scale=0.45]{4}
 
+\includegraphics[scale=0.55]{nnn}
 \newpage
+
 \section{Conclusiones}
 
 Con los datos recopilados de los gráficos podemos concluir que mientras mayor sea el valor de "n" mayor tiempo de ejecución se requiuere.
